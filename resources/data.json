@@ -1,0 +1,74 @@
+{
+  "Locations": [
+    {
+      "id": "l_marshlands",
+      "name": "Rooting Marshlands",
+      "description": "fog-filled swamp where the ground shifts beneath your feet.",
+      "nextLocations": ["l_town"],
+      "items": ""
+    },
+    {
+      "id": "l_town",
+      "name": "Forsaken Town",
+      "description": "Crumbling houses line empty streets where shadows move without bodies.",
+      "nextLocations": ["l_town_hall", "l_windmill", "l_glade"],
+      "items": ""
+    },
+    {
+      "id": "l_town_hall",
+      "name": "Town Hall",
+      "description": "A ruined building overflowing with dark and unstable magic.",
+      "nextLocations": ["l_town"],
+      "items": ""
+    },
+    {
+      "id": "l_windmill",
+      "name": "The Endless Windmill",
+      "description": "An old windmill that turns endlessly without wind, driven by magic.",
+      "nextLocations": ["l_woods", "l_town"],
+      "items": ""
+    },
+    {
+      "id": "l_glade",
+      "name": "Sunny Glade",
+      "description": "A peaceful clearing filled with warm light, offering rest and safety.",
+      "nextLocations": ["l_frozen_peaks", "l_town"],
+      "items": ""
+    },
+    {
+      "id": "l_woods",
+      "name": "Whispering Woods",
+      "description": "A dense forest where trees whisper lies and half-truths.",
+      "nextLocations": ["l_ancient_oak", "l_windmill"],
+      "items": ""
+    },
+    {
+      "id": "l_frozen_peaks",
+      "name": "Frozen Peaks",
+      "description": "A peaceful clearing filled with warm light, offering rest and safety.",
+      "nextLocations": ["l_ancient_oak", "l_glade"],
+      "items": ""
+    },
+    {
+      "id": "l_ancient_oak",
+      "name": "Ancient Oak of Wisdom",
+      "description": "A massive, sentient oak guarding ancient knowledge and paths.",
+      "nextLocations": ["l_froten_peaks", "l_woods", "l_caverns"],
+      "items": ""
+    },
+    {
+      "id": "l_caverns",
+      "name": "Caverns of Oblivion",
+      "description": "A dark underground maze where light is the only protection from deadly falls.",
+      "nextLocations": ["l_star_circle"],
+      "items": ""
+    },
+    {
+      "id": "l_star_circle",
+      "name": "Druidic Star Circle",
+      "description": "A sacred stone circle awaiting powerful artifacts to break the curse.",
+      "nextLocations": [""],
+      "items": ""
+    }
+  ]
+}
