@@ -1,10 +1,10 @@
-import game.DataLoader;
+import game.Game;
 
 public class Main {
     public static void main(String[] args) {
-        DataLoader data = DataLoader.loadGame("/data.json");
+        Game game = new Game();
+        game.start();
 
-        System.out.println("Number of Locations: " + data.Locations.size());
-        System.out.println(data.findLocation("l_windmill").getName() + ": " + data.findLocation("l_windmill").getNextLocations());
+        //TODO přidat Questy do data.json
     }
 }

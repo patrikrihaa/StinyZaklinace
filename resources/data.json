@@ -3,72 +3,199 @@
     {
       "id": "l_marshlands",
       "name": "Rooting Marshlands",
-      "description": "fog-filled swamp where the ground shifts beneath your feet.",
+      "description": "A fog-filled swamp where the ground shifts beneath your feet.",
       "nextLocations": ["l_town"],
-      "items": ""
+      "Items": ["i_mysterious_amulet"]
     },
     {
       "id": "l_town",
       "name": "Forsaken Town",
       "description": "Crumbling houses line empty streets where shadows move without bodies.",
       "nextLocations": ["l_town_hall", "l_windmill", "l_glade"],
-      "items": ""
+      "Items": ["i_rusty_key"]
     },
     {
       "id": "l_town_hall",
       "name": "Town Hall",
       "description": "A ruined building overflowing with dark and unstable magic.",
       "nextLocations": ["l_town"],
-      "items": ""
+      "Items": ["i_curse_scroll"]
     },
     {
       "id": "l_windmill",
       "name": "The Endless Windmill",
       "description": "An old windmill that turns endlessly without wind, driven by magic.",
       "nextLocations": ["l_woods", "l_town"],
-      "items": ""
+      "Items": ["i_healing_herbs"]
     },
     {
       "id": "l_glade",
       "name": "Sunny Glade",
       "description": "A peaceful clearing filled with warm light, offering rest and safety.",
       "nextLocations": ["l_frozen_peaks", "l_town"],
-      "items": ""
+      "Items": ["i_light_crystal"]
     },
     {
       "id": "l_woods",
       "name": "Whispering Woods",
       "description": "A dense forest where trees whisper lies and half-truths.",
       "nextLocations": ["l_ancient_oak", "l_windmill"],
-      "items": ""
+      "Items": ["i_spirit_flask"]
     },
     {
       "id": "l_frozen_peaks",
       "name": "Frozen Peaks",
-      "description": "A peaceful clearing filled with warm light, offering rest and safety.",
+      "description": "Snow-covered mountains where ancient magic sleeps in the ice.",
       "nextLocations": ["l_ancient_oak", "l_glade"],
-      "items": ""
+      "Items": ["i_ice_shard", "i_star_key_1"]
     },
     {
       "id": "l_ancient_oak",
       "name": "Ancient Oak of Wisdom",
       "description": "A massive, sentient oak guarding ancient knowledge and paths.",
-      "nextLocations": ["l_froten_peaks", "l_woods", "l_caverns"],
-      "items": ""
+      "nextLocations": ["l_frozen_peaks", "l_woods", "l_caverns"],
+      "Items": ["i_wisdom_seed", "i_star_key_2"]
     },
     {
       "id": "l_caverns",
       "name": "Caverns of Oblivion",
       "description": "A dark underground maze where light is the only protection from deadly falls.",
       "nextLocations": ["l_star_circle"],
-      "items": ""
+      "Items": ["i_obsidian_blade", "i_star_key_3"]
     },
     {
       "id": "l_star_circle",
       "name": "Druidic Star Circle",
       "description": "A sacred stone circle awaiting powerful artifacts to break the curse.",
-      "nextLocations": [""],
-      "items": ""
+      "nextLocations": ["l_caverns"],
+      "Items": []
+    }
+  ],
+  "Items": [
+    {
+      "id": "i_mysterious_amulet",
+      "name": "Mysterious Amulet",
+      "description": "An ancient amulet pulsing with dark energy. It feels alive in your hands."
+    },
+    {
+      "id": "i_rusty_key",
+      "name": "Rusty Key",
+      "description": "An old key covered in rust. It might open something important in the Town Hall."
+    },
+    {
+      "id": "i_curse_scroll",
+      "name": "Curse Scroll",
+      "description": "A scroll containing the details of the curse that plagues these lands."
+    },
+    {
+      "id": "i_healing_herbs",
+      "name": "Healing Herbs",
+      "description": "Fresh herbs that glow with a soft green light. They can restore health and vitality."
+    },
+    {
+      "id": "i_light_crystal",
+      "name": "Light Crystal",
+      "description": "A radiant crystal that pierces through darkness. Essential for navigating the Caverns."
+    },
+    {
+      "id": "i_spirit_flask",
+      "name": "Spirit Flask",
+      "description": "A sealed flask containing the essence of a forest spirit. Handle with care."
+    },
+    {
+      "id": "i_ice_shard",
+      "name": "Ice Shard",
+      "description": "A fragment of eternal ice that never melts. It hums with frozen magic."
+    },
+    {
+      "id": "i_wisdom_seed",
+      "name": "Wisdom Seed",
+      "description": "A seed from the Ancient Oak, containing centuries of knowledge."
+    },
+    {
+      "id": "i_obsidian_blade",
+      "name": "Obsidian Blade",
+      "description": "A jet-black blade forged from volcanic glass and dark magic."
+    },
+    {
+      "id": "i_star_key_1",
+      "name": "First Star Key",
+      "description": "One of three keys needed to activate the Star Circle and break the curse."
+    },
+    {
+      "id": "i_star_key_2",
+      "name": "Second Star Key",
+      "description": "The second key for the Star Circle. Its surface reflects distant stars."
+    },
+    {
+      "id": "i_star_key_3",
+      "name": "Third Star Key",
+      "description": "The final key needed to complete the ritual at the Star Circle."
+    }
+  ],
+  "Characters": [
+    {
+      "id": "npc_elder_marius",
+      "name": "Elder Marius",
+      "description": "An old wanderer who knows the history of the curse. 'The land weeps for what was lost. Find the three Star Keys to break the cycle.'",
+      "location": "l_town",
+      "quest": "q_break_curse"
+    },
+    {
+      "id": "npc_ghost_merchant",
+      "name": "Ghost Merchant",
+      "description": "A spectral trader trapped between worlds. 'I have what you seek, but everything has a price in this cursed place.'",
+      "location": "l_town_hall",
+      "quest": ""
+    },
+    {
+      "id": "npc_windmill_keeper",
+      "name": "Windmill Keeper",
+      "description": "A mysterious figure who maintains the endless windmill. 'The winds remember everything. They whisper of three keys scattered across the land.'",
+      "location": "l_windmill",
+      "quest": ""
+    },
+    {
+      "id": "npc_spirit_of_light",
+      "name": "Spirit of Light",
+      "description": "A benevolent entity that dwells in the Sunny Glade. 'Take this crystal, traveler. You'll need it in the darkness below.'",
+      "location": "l_glade",
+      "quest": ""
+    },
+    {
+      "id": "npc_forest_whisperer",
+      "name": "Forest Whisperer",
+      "description": "A cryptic being who speaks in riddles. 'Truth and lies dance together here. One flask holds clarity, another holds doom.'",
+      "location": "l_woods",
+      "quest": ""
+    },
+    {
+      "id": "npc_ice_guardian",
+      "name": "Ice Guardian",
+      "description": "An ancient protector of the Frozen Peaks. 'The First Star Key lies frozen in my domain. Prove your worth to claim it.'",
+      "location": "l_frozen_peaks",
+      "quest": ""
+    },
+    {
+      "id": "npc_ancient_oak",
+      "name": "The Ancient Oak",
+      "description": "The sentient tree itself speaks with a voice like rustling leaves. 'I have watched for centuries. The Second Key rests in my roots.'",
+      "location": "l_ancient_oak",
+      "quest": ""
+    },
+    {
+      "id": "npc_shadow_wraith",
+      "name": "Shadow Wraith",
+      "description": "A dangerous entity lurking in the Caverns. 'The Third Key is mine! Leave now or face oblivion!'",
+      "location": "l_caverns",
+      "quest": ""
+    },
+    {
+      "id": "npc_druid_spirit",
+      "name": "Druid Spirit",
+      "description": "The ghostly remnant of the last druid. 'Place the three Star Keys upon the altar. Only then can the curse be broken.'",
+      "location": "l_star_circle",
+      "quest": ""
     }
   ]
 }
