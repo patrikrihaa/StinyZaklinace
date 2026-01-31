@@ -19,7 +19,7 @@ public class DataLoader {
             }
             return gson.fromJson(new InputStreamReader(is, StandardCharsets.UTF_8), DataLoader.class);
         } catch (Exception e) {
-            throw new RuntimeException("Error when loading JSON fle: " + e.getMessage());
+            throw new RuntimeException("Error when loading JSON fle: ");
         }
 
     }
