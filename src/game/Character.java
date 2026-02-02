@@ -6,7 +6,10 @@ public class Character {
     private String description;
     private String location;
     private String quest;
-    private String Dialogue;
+    private String dialogue;
+    private String questCompleteDialogue;
+    private String riddleAnswer;
+    private boolean hostile;
 
     public String getId() {
         return id;
@@ -49,11 +52,35 @@ public class Character {
     }
 
     public String getDialogue() {
-        return Dialogue;
+        return dialogue;
     }
 
     public void setDialogue(String dialogue) {
-        Dialogue = dialogue;
+        this.dialogue = dialogue;
+    }
+
+    public String getQuestCompleteDialogue() {
+        return questCompleteDialogue;
+    }
+
+    public void setQuestCompleteDialogue(String questCompleteDialogue) {
+        this.questCompleteDialogue = questCompleteDialogue;
+    }
+
+    public String getRiddleAnswer() {
+        return riddleAnswer;
+    }
+
+    public void setRiddleAnswer(String riddleAnswer) {
+        this.riddleAnswer = riddleAnswer;
+    }
+
+    public boolean isHostile() {
+        return hostile;
+    }
+
+    public void setHostile(boolean hostile) {
+        this.hostile = hostile;
     }
 
     @Override

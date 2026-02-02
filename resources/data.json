@@ -1,201 +1,295 @@
 {
   "Locations": [
     {
-      "id": "l_marshlands",
-      "name": "Rooting Marshlands",
-      "description": "A fog-filled swamp where the ground shifts beneath your feet.",
-      "nextLocations": ["l_town"],
-      "Items": ["i_mysterious_amulet"]
+      "id": "rotting_marshlands",
+      "name": "Rotting Marshlands",
+      "description": "You wake with a pounding headache on cold, muddy ground. Gray-green fog rolls between twisted trees. The air reeks of decay and rot. This cursed swamp is no place for the living.",
+      "nextLocations": ["forsaken_town"],
+      "Items": ["magic_wand", "glasses"],
+      "locked": false
     },
     {
-      "id": "l_town",
+      "id": "forsaken_town",
       "name": "Forsaken Town",
-      "description": "Crumbling houses line empty streets where shadows move without bodies.",
-      "nextLocations": ["l_town_hall", "l_windmill", "l_glade"],
-      "Items": ["i_rusty_key"]
+      "description": "An old, dilapidated town where disturbing shadows move through empty streets. Crumbling houses stand as monuments to a forgotten past.",
+      "nextLocations": ["rotting_marshlands", "town_hall", "sunny_glade", "windmill"],
+      "Items": ["healing_elixir"],
+      "locked": false
     },
     {
-      "id": "l_town_hall",
-      "name": "Town Hall",
-      "description": "A ruined building overflowing with dark and unstable magic.",
-      "nextLocations": ["l_town"],
-      "Items": ["i_curse_scroll"]
+      "id": "town_hall",
+      "name": "Town Hall Tower",
+      "description": "A crumbling tower in the center of the Forsaken Town. Dark magic concentrates here, making the air thick and difficult to breathe.",
+      "nextLocations": ["forsaken_town"],
+      "Items": [],
+      "locked": false
     },
     {
-      "id": "l_windmill",
-      "name": "The Endless Windmill",
-      "description": "An old windmill that turns endlessly without wind, driven by magic.",
-      "nextLocations": ["l_woods", "l_town"],
-      "Items": ["i_healing_herbs"]
-    },
-    {
-      "id": "l_glade",
+      "id": "sunny_glade",
       "name": "Sunny Glade",
-      "description": "A peaceful clearing filled with warm light, offering rest and safety.",
-      "nextLocations": ["l_frozen_peaks", "l_town"],
-      "Items": ["i_light_crystal"]
+      "description": "A safe, sun-drenched refuge that offers rest and regeneration. The warmth here feels like a blessing after the cursed lands.",
+      "nextLocations": ["forsaken_town", "frozen_peaks"],
+      "Items": [],
+      "locked": false
     },
     {
-      "id": "l_woods",
+      "id": "windmill",
+      "name": "Windmill",
+      "description": "An abandoned windmill that spins endlessly without wind, powered by a mechanical device of unknown origin.",
+      "nextLocations": ["forsaken_town", "whispering_woods"],
+      "Items": ["magic_flour"],
+      "locked": true,
+      "unlockItem": "rusty_key"
+    },
+    {
+      "id": "whispering_woods",
       "name": "Whispering Woods",
-      "description": "A dense forest where trees whisper lies and half-truths.",
-      "nextLocations": ["l_ancient_oak", "l_windmill"],
-      "Items": ["i_spirit_flask"]
+      "description": "A dense forest where trees speak and try to confuse travelers. Their whispers promise truth but deliver only lies.",
+      "nextLocations": ["windmill", "ancient_oak"],
+      "Items": [],
+      "locked": false
     },
     {
-      "id": "l_frozen_peaks",
-      "name": "Frozen Peaks",
-      "description": "Snow-covered mountains where ancient magic sleeps in the ice.",
-      "nextLocations": ["l_ancient_oak", "l_glade"],
-      "Items": ["i_ice_shard", "i_star_key_1"]
-    },
-    {
-      "id": "l_ancient_oak",
+      "id": "ancient_oak",
       "name": "Ancient Oak of Wisdom",
-      "description": "A massive, sentient oak guarding ancient knowledge and paths.",
-      "nextLocations": ["l_frozen_peaks", "l_woods", "l_caverns"],
-      "Items": ["i_wisdom_seed", "i_star_key_2"]
+      "description": "A majestic tree that guards the knowledge of the forest and protects the path to further locations.",
+      "nextLocations": ["whispering_woods", "frozen_peaks", "caverns_of_oblivion"],
+      "Items": [],
+      "locked": false
     },
     {
-      "id": "l_caverns",
+      "id": "frozen_peaks",
+      "name": "Frozen Peaks",
+      "description": "Snow-covered and inhospitable mountain peaks with freezing climate and thin air. Every breath is a struggle.",
+      "nextLocations": ["ancient_oak", "sunny_glade"],
+      "Items": [],
+      "locked": false
+    },
+    {
+      "id": "caverns_of_oblivion",
       "name": "Caverns of Oblivion",
-      "description": "A dark underground maze where light is the only protection from deadly falls.",
-      "nextLocations": ["l_star_circle"],
-      "Items": ["i_obsidian_blade", "i_star_key_3"]
+      "description": "A dark underground complex where movement near chasms is impossible without magical light. One wrong step means certain death.",
+      "nextLocations": ["frozen_peaks", "druids_star_circle"],
+      "Items": [],
+      "locked": true,
+      "unlockItem": "light_crystal"
     },
     {
-      "id": "l_star_circle",
-      "name": "Druidic Star Circle",
-      "description": "A sacred stone circle awaiting powerful artifacts to break the curse.",
-      "nextLocations": ["l_caverns"],
-      "Items": []
+      "id": "druids_star_circle",
+      "name": "Druid's Star Circle",
+      "description": "An ancient ritual site formed by a circle of stones atop a mountain. The altar at its center pulses with dormant power.",
+      "nextLocations": ["caverns_of_oblivion"],
+      "Items": [],
+      "locked": true
     }
   ],
   "Items": [
     {
-      "id": "i_mysterious_amulet",
-      "name": "Mysterious Amulet",
-      "description": "An ancient amulet pulsing with dark energy. It feels alive in your hands."
+      "id": "magic_wand",
+      "name": "Magic Wand",
+      "description": "A wand that allows you to use magic in combat. It hums with arcane power."
     },
     {
-      "id": "i_rusty_key",
+      "id": "rusty_key",
       "name": "Rusty Key",
-      "description": "An old key covered in rust. It might open something important in the Town Hall."
+      "description": "An old rusty key meant to unlock the mechanism in the Windmill."
     },
     {
-      "id": "i_curse_scroll",
-      "name": "Curse Scroll",
-      "description": "A scroll containing the details of the curse that plagues these lands."
-    },
-    {
-      "id": "i_healing_herbs",
-      "name": "Healing Herbs",
-      "description": "Fresh herbs that glow with a soft green light. They can restore health and vitality."
-    },
-    {
-      "id": "i_light_crystal",
+      "id": "light_crystal",
       "name": "Light Crystal",
-      "description": "A radiant crystal that pierces through darkness. Essential for navigating the Caverns."
+      "description": "An essential tool for illuminating dark spaces. It glows with pure white light."
     },
     {
-      "id": "i_spirit_flask",
-      "name": "Spirit Flask",
-      "description": "A sealed flask containing the essence of a forest spirit. Handle with care."
+      "id": "swamp_gas",
+      "name": "Swamp Gas",
+      "description": "A rare gas from the marshlands. One of the ritual artifacts needed for the altar."
     },
     {
-      "id": "i_ice_shard",
-      "name": "Ice Shard",
-      "description": "A fragment of eternal ice that never melts. It hums with frozen magic."
+      "id": "magic_flour",
+      "name": "Magic Flour",
+      "description": "Enchanted flour from the Windmill. One of the ritual artifacts needed for the altar."
     },
     {
-      "id": "i_wisdom_seed",
-      "name": "Wisdom Seed",
-      "description": "A seed from the Ancient Oak, containing centuries of knowledge."
+      "id": "eternal_twig",
+      "name": "Eternal Twig",
+      "description": "A twig from the Ancient Oak that never withers. One of the ritual artifacts needed for the altar."
     },
     {
-      "id": "i_obsidian_blade",
-      "name": "Obsidian Blade",
-      "description": "A jet-black blade forged from volcanic glass and dark magic."
+      "id": "frosty_quartz",
+      "name": "Frosty Quartz",
+      "description": "A crystalline mineral from the frozen peaks. One of the ritual artifacts needed for the altar."
     },
     {
-      "id": "i_star_key_1",
-      "name": "First Star Key",
-      "description": "One of three keys needed to activate the Star Circle and break the curse."
+      "id": "rune_stone",
+      "name": "Rune Stone",
+      "description": "An ancient stone carved with mystical runes. One of the ritual artifacts needed for the altar."
     },
     {
-      "id": "i_star_key_2",
-      "name": "Second Star Key",
-      "description": "The second key for the Star Circle. Its surface reflects distant stars."
+      "id": "spell_fragment",
+      "name": "Spell Fragment",
+      "description": "A fragment of a powerful spell. The final ritual artifact needed for the altar."
     },
     {
-      "id": "i_star_key_3",
-      "name": "Third Star Key",
-      "description": "The final key needed to complete the ritual at the Star Circle."
+      "id": "healing_elixir",
+      "name": "Healing Elixir",
+      "description": "A potion that can heal joint pains and other ailments."
+    },
+    {
+      "id": "glasses",
+      "name": "Glasses",
+      "description": "A pair of spectacles lost in the marshlands."
     }
   ],
   "Characters": [
     {
-      "id": "npc_elder_marius",
-      "name": "Elder Marius",
-      "description": "An old wanderer who knows the history of the curse. 'The land weeps for what was lost. Find the three Star Keys to break the cycle.'",
-      "location": "l_town",
-      "quest": "q_break_curse"
+      "id": "swamp_wanderer",
+      "name": "Swamp Wanderer",
+      "description": "A creature inhabiting the marshlands. It squints as it tries to see you.",
+      "location": "rotting_marshlands",
+      "quest": "find_glasses",
+      "dialogue": "I... I can't see properly. My glasses! I lost my glasses somewhere in this cursed swamp. If you find them and bring them to me, I'll give you something valuable - a rare swamp gas.",
+      "questCompleteDialogue": "You found them! I can see again! Here, take this swamp gas as promised. It's a ritual artifact - guard it well."
     },
     {
-      "id": "npc_ghost_merchant",
-      "name": "Ghost Merchant",
-      "description": "A spectral trader trapped between worlds. 'I have what you seek, but everything has a price in this cursed place.'",
-      "location": "l_town_hall",
-      "quest": ""
+      "id": "skeleton_hugo",
+      "name": "Skeleton Hugo",
+      "description": "The former mayor, now a skeleton suffering from joint pains.",
+      "location": "forsaken_town",
+      "quest": "heal_hugo",
+      "dialogue": "Ahhh, my bones ache terribly! Once I was the proud mayor of this town. Now I'm just a pile of bones in constant pain. Bring me a healing elixir, and I'll give you my precious key.",
+      "questCompleteDialogue": "Ahh! The pain is gone! Thank you, traveler. Here's the rusty key I promised. May it serve you well."
     },
     {
-      "id": "npc_windmill_keeper",
-      "name": "Windmill Keeper",
-      "description": "A mysterious figure who maintains the endless windmill. 'The winds remember everything. They whisper of three keys scattered across the land.'",
-      "location": "l_windmill",
-      "quest": ""
+      "id": "forest_fairy",
+      "name": "Forest Fairy",
+      "description": "Guardian of the crystal who tests travelers with riddles.",
+      "location": "sunny_glade",
+      "quest": "solve_riddle",
+      "dialogue": "Welcome, traveler. I am the guardian of the Light Crystal. To prove your wit, answer my riddle: I speak without a mouth and hear without ears. I have no body, but come alive with wind. What am I?",
+      "questCompleteDialogue": "Correct! An echo. You have proven your intellect. Take the Light Crystal - you'll need it in the darkness below.",
+      "riddleAnswer": "echo"
     },
     {
-      "id": "npc_spirit_of_light",
-      "name": "Spirit of Light",
-      "description": "A benevolent entity that dwells in the Sunny Glade. 'Take this crystal, traveler. You'll need it in the darkness below.'",
-      "location": "l_glade",
-      "quest": ""
+      "id": "explorer_gerald",
+      "name": "Explorer Gerald",
+      "description": "A mineral expert trapped in the caverns.",
+      "location": "caverns_of_oblivion",
+      "quest": "gerald_riddle",
+      "dialogue": "Ah, another soul braving these caverns! I'm a mineral expert, and I have a Rune Stone you seek. But first, solve my riddle: The more you take, the more you leave behind. What am I?",
+      "questCompleteDialogue": "Footsteps! Well done. Here's the Rune Stone. Use it wisely.",
+      "riddleAnswer": "footsteps"
     },
     {
-      "id": "npc_forest_whisperer",
-      "name": "Forest Whisperer",
-      "description": "A cryptic being who speaks in riddles. 'Truth and lies dance together here. One flask holds clarity, another holds doom.'",
-      "location": "l_woods",
-      "quest": ""
+      "id": "oak_of_wisdom",
+      "name": "Oak of Wisdom",
+      "description": "An intelligent tree that requires proof of magical abilities.",
+      "location": "ancient_oak",
+      "quest": "prove_magic",
+      "dialogue": "Young wizard... I sense you, but words alone mean nothing. Show me you possess true magical power. Use your wand in my presence, and I shall grant you the Eternal Twig.",
+      "questCompleteDialogue": "Your magic is genuine. Take this Eternal Twig - a piece of my essence that shall never wither."
     },
     {
-      "id": "npc_ice_guardian",
-      "name": "Ice Guardian",
-      "description": "An ancient protector of the Frozen Peaks. 'The First Star Key lies frozen in my domain. Prove your worth to claim it.'",
-      "location": "l_frozen_peaks",
-      "quest": ""
+      "id": "arcanist_malrec",
+      "name": "Arcanist Malrec",
+      "description": "A former court wizard who became enslaved after attempting to gain power.",
+      "location": "town_hall",
+      "quest": "defeat_malrec",
+      "dialogue": "You dare enter my domain? I was once the greatest court wizard, but my quest for power transformed me into... this. Now I serve the curse itself. If you want the Spell Fragment, you must defeat me in combat! (use magic_wand)",
+      "questCompleteDialogue": "You... you've freed me. The curse's hold is broken. Take the Spell Fragment. Use it to end this nightmare for everyone.",
+      "hostile": true
     },
     {
-      "id": "npc_ancient_oak",
-      "name": "The Ancient Oak",
-      "description": "The sentient tree itself speaks with a voice like rustling leaves. 'I have watched for centuries. The Second Key rests in my roots.'",
-      "location": "l_ancient_oak",
-      "quest": ""
+      "id": "mysterious_figure",
+      "name": "Mysterious Figure",
+      "description": "A cloaked figure who seems to know more than they let on.",
+      "location": "whispering_woods",
+      "quest": "",
+      "dialogue": "The woods whisper many things, traveler. Some truth, some lies. Trust your instincts, and you may find what you seek."
     },
     {
-      "id": "npc_shadow_wraith",
-      "name": "Shadow Wraith",
-      "description": "A dangerous entity lurking in the Caverns. 'The Third Key is mine! Leave now or face oblivion!'",
-      "location": "l_caverns",
-      "quest": ""
-    },
-    {
-      "id": "npc_druid_spirit",
-      "name": "Druid Spirit",
-      "description": "The ghostly remnant of the last druid. 'Place the three Star Keys upon the altar. Only then can the curse be broken.'",
-      "location": "l_star_circle",
-      "quest": ""
+      "id": "ice_hermit",
+      "name": "Ice Hermit",
+      "description": "A reclusive figure living among the frozen peaks.",
+      "location": "frozen_peaks",
+      "quest": "gather_quartz",
+      "dialogue": "The cold preserves all things here. I've found a beautiful Frosty Quartz in the ice. Prove yourself worthy by gathering ingredients for a healing elixir, and I'll trade it to you.",
+      "questCompleteDialogue": "Excellent work! This elixir will help many. Here's the Frosty Quartz as promised."
     }
+  ],
+  "Quests": [
+    {
+      "id": "find_glasses",
+      "name": "Find the Glasses",
+      "character": "swamp_wanderer",
+      "description": "Find the Swamp Wanderer's lost glasses.",
+      "requiredItem": "glasses",
+      "reward": "swamp_gas",
+      "completed": false
+    },
+    {
+      "id": "heal_hugo",
+      "name": "Heal Skeleton Hugo",
+      "character": "skeleton_hugo",
+      "description": "Bring a healing elixir to Skeleton Hugo.",
+      "requiredItem": "healing_elixir",
+      "reward": "rusty_key",
+      "completed": false
+    },
+    {
+      "id": "solve_riddle",
+      "name": "Solve the Fairy's Riddle",
+      "character": "forest_fairy",
+      "description": "Answer the Forest Fairy's riddle correctly.\n ",
+      "requiredItem": "",
+      "reward": "light_crystal",
+      "completed": false,
+      "riddleAnswer": "echo"
+    },
+    {
+      "id": "gerald_riddle",
+      "name": "Solve Gerald's Riddle",
+      "character": "explorer_gerald",
+      "description": "Answer Explorer Gerald's riddle.",
+      "requiredItem": "",
+      "reward": "rune_stone",
+      "completed": false,
+      "riddleAnswer": "footsteps"
+    },
+    {
+      "id": "prove_magic",
+      "name": "Prove Your Magic",
+      "character": "oak_of_wisdom",
+      "description": "Demonstrate your magical abilities to the Oak of Wisdom.",
+      "requiredItem": "magic_wand",
+      "reward": "eternal_twig",
+      "completed": false
+    },
+    {
+      "id": "defeat_malrec",
+      "name": "Defeat Arcanist Malrec",
+      "character": "arcanist_malrec",
+      "description": "Defeat the corrupted wizard in combat.",
+      "requiredItem": "magic_wand",
+      "reward": "spell_fragment",
+      "completed": false,
+      "combat": true
+    },
+    {
+      "id": "gather_quartz",
+      "name": "Gather Ingredients",
+      "character": "ice_hermit",
+      "description": "Help the Ice Hermit create a healing elixir.",
+      "requiredItem": "",
+      "reward": "frosty_quartz",
+      "completed": false
+    }
+  ],
+  "AltarRequirements": [
+    "swamp_gas",
+    "magic_flour",
+    "eternal_twig",
+    "frosty_quartz",
+    "rune_stone",
+    "spell_fragment"
   ]
 }

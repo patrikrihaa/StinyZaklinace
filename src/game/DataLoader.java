@@ -10,7 +10,8 @@ public class DataLoader {
     public ArrayList<Location> Locations;
     public ArrayList<Item> Items;
     public ArrayList<Character> Characters;
-//    public ArrayList<Quest> quests;
+    public ArrayList<Quest> Quests;
+    public ArrayList<String> AltarRequirements;
 
     public static DataLoader loadGame(String resourcePath) {
         Gson gson = new Gson();
@@ -22,7 +23,7 @@ public class DataLoader {
             }
             return gson.fromJson(new InputStreamReader(Is, StandardCharsets.UTF_8), DataLoader.class);
         } catch (Exception e) {
-            throw new RuntimeException("Error when loading JSON fle: ");
+            throw new RuntimeException("Error when loading JSON file: " + e.getMessage());
         }
 
     }
@@ -60,5 +61,27 @@ public class DataLoader {
         throw new IllegalArgumentException("Character with id '" + id + "' doesn't exist");
     }
 
+    public Quest findQuest(String id) {
+        if (Quests == null) {
+            throw new IllegalArgumentException("No quests loaded in game");
+        }
+        for (Quest quest : Quests) {
+            if (quest.getId().equals(id)){
+                return quest;
+            }
+        }
+        throw new IllegalArgumentException("Quest with id '" + id + "' doesn't exist");
+    }
 
+    public ArrayList<Character> getCharactersInLocation(String locationId) {
+        ArrayList<Character> chars = new ArrayList<>();
+        if (Characters != null) {
+            for (Character c : Characters) {
+                if (c.getLocation().equals(locationId)) {
+                    chars.add(c);
+                }
+            }
+        }
+        return chars;
+    }
 }

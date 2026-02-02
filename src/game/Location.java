@@ -8,6 +8,8 @@ public class Location {
     private String description;
     private ArrayList<String> nextLocations;
     private ArrayList<String> Items;
+    private boolean locked;
+    private String unlockItem;
 
     public String getId() {
         return id;
@@ -47,6 +49,22 @@ public class Location {
 
     public void setItems(ArrayList<String> items) {
         Items = items;
+    }
+
+    public boolean isLocked() {
+        return locked;
+    }
+
+    public void setLocked(boolean locked) {
+        this.locked = locked;
+    }
+
+    public String getUnlockItem() {
+        return unlockItem;
+    }
+
+    public void setUnlockItem(String unlockItem) {
+        this.unlockItem = unlockItem;
     }
 
     @Override

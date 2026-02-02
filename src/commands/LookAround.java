@@ -16,13 +16,18 @@ public class LookAround implements Command {
         Location currentLocation = p.getLocation();
         StringBuilder description = new StringBuilder();
 
-        if (currentLocation.getItems() != null) {
-            description.append("\nCongratulations, you have found ").append(currentLocation.getItems()).append("!");
-            description.append("\nYou can pick it up using command: take <item_id>");
-        } else if (!currentLocation.getItems().isEmpty()) {
-            description.append("\nCongratulations, you have found ").append(currentLocation.getItems()).append("!");
-            description.append("\nYou can pick it up using command: take <item_id>");
+        description.append("\n").append(currentLocation.getDescription()).append("\n");
+
+        if (currentLocation.getItems() != null && !currentLocation.getItems().isEmpty()) {
+            description.append("\nYou see the following items here:\n");
+            for (String item : currentLocation.getItems()) {
+                description.append("  - ").append(item).append("\n");
+            }
+            description.append("You can pick up items using: take <item_id>\n");
+        } else {
+            description.append("\nThere are no items here.\n");
         }
+
         return description.toString();
     }
 
