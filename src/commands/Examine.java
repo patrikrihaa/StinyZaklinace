@@ -8,18 +8,34 @@ import game.Character;
 
 import java.util.ArrayList;
 
+/**
+ * Příkaz pro zkoumání objektů a lokací.
+ * Poskytuje detailní informace o předmětech, postavách a okolí.
+ *
+ * @author Patrik Říha
+ */
+
 public class Examine implements Command {
     private Player player;
     private DataLoader world;
 
+    /**
+     * Konstruktor pro prozkoumání objektu, či lokace.
+     * @param player reference na hráče (pro zjištění jeho inventáře a lokace)
+     * @param world  reference na herní svět (pro přístup k úkolům a postavám)
+     */
     public Examine(Player player, DataLoader world) {
         this.player = player;
         this.world = world;
     }
-
+    /**
+     * Zpracuje uživatelský vstup a vyhledá detailní popis zadaného cíle.
+     * @param command textový řetězec zadaný hráčem (např. "examine")
+     * @return textový popis zkoumaného předmětu či okolí, případně zpráva, že cíl nebyl nalezen
+     */
     @Override
     public String execute(String command) {
-        String[] parts = command.split(" ");
+        String[] parts = command.split("\\s+");
 
         if (parts.length < 2) {
             return examineLocation();
@@ -44,6 +60,11 @@ public class Examine implements Command {
         }
     }
 
+    /**
+     * Poskytne detailní informace o lokaci, ve které se hráč zrovna nachází.
+     * Zahrnuje i seznam viditelných předmětů nebo dostupných východů.
+     * @return textový popis aktuální místnosti
+     */
     private String examineLocation() {
         Location loc = player.getLocation();
         StringBuilder result = new StringBuilder();
@@ -54,7 +75,7 @@ public class Examine implements Command {
             result.append("Items here:\n");
             for (String itemId : loc.getItems()) {
                 Item item = world.findItem(itemId);
-                result.append("  - ").append(item.getName()).append("\n");
+                result.append("  - ").append(item.getId()).append(" (").append(item.getName()).append(")\n");
             }
             result.append("\n");
         }
@@ -63,7 +84,7 @@ public class Examine implements Command {
         if (!chars.isEmpty()) {
             result.append("Characters here:\n");
             for (Character c : chars) {
-                result.append("  - ").append(c.getName()).append("\n");
+                result.append("  - ").append(c.getId()).append(" (").append(c.getName()).append(")\n");
             }
             result.append("\n");
         }
@@ -83,10 +104,16 @@ public class Examine implements Command {
         return result.toString();
     }
 
+    /**
+     * Poskytne detailní popis místnosti s oltářem, slouží i jako nápověda,
+     * že právě zde musí položiz předměty potřebné k úspěšnému dokončení hry.
+     * @return textový popis oltáře a případně jeho aktuálního stavu (např. kolik předmětů chybí)
+     */
     private String examineAltar() {
         StringBuilder result = new StringBuilder();
         result.append("An ancient stone altar stands before you, carved with mystical symbols.\n");
-        result.append("Six circular indentations await the ritual artifacts.\n\n");
+        result.append("Six circular indentations await the ritual artifacts.\n");
+        result.append("Use command 'use <item_id>' to place item onto the altar.\n\n");
 
         if (player.getAltarItems().isEmpty()) {
             result.append("No artifacts have been placed yet.\n");

@@ -1,5 +1,13 @@
 package game;
 
+/**
+ * Reprezentuje quest ve hře.
+ * Každý quest má svoje ID, jméno, přidělené NPC a popisek.
+ * Questy vyžadují splnění určitých podmínek a poskytují odměny.
+ *
+ * @author Patrik Říha
+ */
+
 public class Quest {
     private String id;
     private String name;

@@ -4,24 +4,42 @@ import game.DataLoader;
 import game.Location;
 import game.Player;
 
+/**
+ * Příkaz pro pohyb hráče mezi lokacemi.
+ * Kontroluje dostupnost cílové lokace a zámky.
+ *
+ * @author Patrik Říha
+ */
 public class Movement implements Command {
-    private Player p;
+    private Player player;
     private DataLoader world;
 
-    public Movement(Player p, DataLoader world) {
-        this.p = p;
+    /**
+     * Konstruktor pro pohyb ve hře.
+     * @param player reference na hráče (pro zjištění a aktualizaci jeho lokace, ověření inventáře)
+     * @param world  reference na herní svět (pro přístup k datům lokací, předmětů a stavu úkolů)
+     */
+    public Movement(Player player, DataLoader world) {
+        this.player = player;
         this.world = world;
     }
 
+    /**
+     * Zpracuje uživatelský požadavek na přesun do jiné lokace.
+     * Vyhodnocuje, zda je zadaný cíl platný, volně přístupný , zamčený na konkrétní předmět,
+     * nebo blokovaný příběhovou bariérou (např. Kruh druidů vyžaduje 6 splněných úkolů).
+     * @param command celý vstup od hráče (očekává se formát např. "go <lokace_id>")
+     * @return zpráva o úspěšném přesunu (včetně popisu nové lokace), nebo důvod, proč tam nelze jít
+     */
     public String execute(String command) {
-        String[] parts = command.split(" ");
+        String[] parts = command.split("\\s+");
 
         if (parts.length < 2) {
             return "You have to specify a location id";
         }
 
         String locationId = parts[1].trim();
-        Location currentLocation = p.getLocation();
+        Location currentLocation = player.getLocation();
 
         if (!currentLocation.getNextLocations().contains(locationId)) {
             return "You can't move to location: " + locationId + ". This location isn't currently available.";
@@ -47,11 +65,12 @@ public class Movement implements Command {
                                 "Quests completed: " + completedQuests + " / 6";
                     }
                 } else if (targetLocation.getUnlockItem() != null) {
-                    if (p.getInventory().contains(targetLocation.getUnlockItem())) {
+                    if (player.getInventory().contains(targetLocation.getUnlockItem())) {
                         targetLocation.setLocked(false);
+                        player.updateLocation(targetLocation);
                         return "You use the " + world.findItem(targetLocation.getUnlockItem()).getName() +
                                 " to unlock the path.\n" +
-                                "You have successfully moved to: " + targetLocation.getName() + "\n\n" +
+                                "You have successfully moved to: " + targetLocation.getName() + "\n\n=== " + targetLocation.getName() + " ===\n" +
                                 targetLocation.getDescription();
                     } else {
                         return "The path to " + targetLocation.getName() + " is locked.\n" +
@@ -61,8 +80,7 @@ public class Movement implements Command {
                     return "The path to " + targetLocation.getName() + " is locked.";
                 }
             }
-
-            p.updateLocation(targetLocation);
+            player.updateLocation(targetLocation);
             return "\n=== " + targetLocation.getName() + " ===\n" +
                     targetLocation.getDescription();
         } catch (IllegalArgumentException e) {

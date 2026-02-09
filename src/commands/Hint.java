@@ -6,15 +6,32 @@ import game.Quest;
 import game.Character;
 
 import java.util.ArrayList;
+/**
+ * Příkaz pro zobrazení nápovědy.
+ * Poskytuje kontextové tipy pro pokrok ve hře.
+ *
+ * @author Patrik Říha
+ */
 
 public class Hint implements Command {
     private Player player;
     private DataLoader world;
 
+    /**
+     * Konstruktor pro nápovědu.
+     * @param player reference na hráče (pro zjištění jeho inventáře a lokace)
+     * @param world  reference na herní svět (pro přístup k úkolům a postavám)
+     */
     public Hint(Player player, DataLoader world) {
         this.player = player;
         this.world = world;
     }
+    /**
+     * Zpracuje uživatelský požadavek a vyhodnotí aktuální stav hráče či lokace,
+     * aby mu poskytl užitečnou radu pro další postup.
+     * @param command textový řetězec zadaný hráčem (např. "hint" nebo "porad")
+     * @return textový tip na míru aktuální situaci ve hře
+     */
 
     @Override
     public String execute(String command) {
@@ -40,13 +57,19 @@ public class Hint implements Command {
         return getLocationHint(locationId);
     }
 
+    /**
+     * Poskytne hráči nápovědu týkající se Oltáře (Altar).
+     * Vyhodnotí, kolik artefaktů už hráč položil, a poradí mu, co dál.
+     * @return textový tip zaměřený na finální úkol
+     */
     private String getAltarHint() {
         int placed = player.getAltarItems().size();
         int total = world.AltarRequirements.size();
 
         if (placed == 0) {
             return "You need to gather six ritual artifacts and place them on the altar.\n" +
-                    "Complete quests throughout the land to obtain these artifacts.";
+                    "Complete quests throughout the land to obtain these artifacts.\n" +
+                    "Use command 'use <item_id>' to place item onto the altar.";
         } else if (placed < total) {
             return "You've placed " + placed + " of " + total + " artifacts.\n" +
                     "Continue exploring and completing quests to find the remaining artifacts.";
@@ -55,6 +78,13 @@ public class Hint implements Command {
         }
     }
 
+    /**
+     * Poskytne hráči nápovědu k aktuálnímu úkolu.
+     * Zkontroluje typ úkolu (boj, hádanka, předmět) a napoví řešení.
+     * @param quest aktuální úkol, který postava zadala
+     * @param character postava v místnosti spojená s tímto úkolem
+     * @return textový tip k vyřešení questu
+     */
     private String getQuestHint(Quest quest, Character character) {
         if (quest.isCombat()) {
             if (player.getInventory().contains("magic_wand")) {
@@ -75,13 +105,18 @@ public class Hint implements Command {
                         "Use the item to complete the quest: use " + quest.getRequiredItem();
             } else {
                 return character.getName() + " needs: " + quest.getRequiredItem() + "\n" +
-                        "Explore other locations to find it.";
+                        "Explore this or other locations to find it.";
             }
         }
 
         return "Talk to " + character.getName() + " to learn more about what they need.";
     }
 
+    /**
+     * Poskytne hráči obecnou nápovědu založenou na jeho aktuální lokaci.
+     * @param locationId ID lokace, ve které se hráč aktuálně nachází
+     * @return textový tip vázaný na aktuální lokaci
+     */
     private String getLocationHint(String locationId) {
         switch (locationId) {
             case "rotting_marshlands":
@@ -93,8 +128,7 @@ public class Hint implements Command {
                         "Make sure to talk to anyone you meet here.";
 
             case "windmill":
-                return "This location might be locked. You'll need the right key to enter.\n" +
-                        "Complete quests in the town to obtain keys.";
+                return "Don't forget to take everything you can carry.";
 
             case "caverns_of_oblivion":
                 return "It's very dark here. You'll need a light source to navigate safely.\n" +

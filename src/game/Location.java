@@ -1,7 +1,12 @@
 package game;
 
 import java.util.ArrayList;
-
+/**
+ * Reprezentuje lokaci ve světě hry.
+ * Každá lokace má unikátní ID, název, popis, sousední lokace, předměty a lokace může být zamčená.
+ *
+ * @author Patrik Říha
+ */
 public class Location {
     private String id;
     private String name;

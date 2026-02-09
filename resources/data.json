@@ -5,7 +5,7 @@
       "name": "Rotting Marshlands",
       "description": "You wake with a pounding headache on cold, muddy ground. Gray-green fog rolls between twisted trees. The air reeks of decay and rot. This cursed swamp is no place for the living.",
       "nextLocations": ["forsaken_town"],
-      "Items": ["magic_wand", "glasses"],
+      "Items": ["glasses"],
       "locked": false
     },
     {
@@ -62,14 +62,14 @@
       "name": "Frozen Peaks",
       "description": "Snow-covered and inhospitable mountain peaks with freezing climate and thin air. Every breath is a struggle.",
       "nextLocations": ["ancient_oak", "sunny_glade"],
-      "Items": [],
+      "Items": ["frosty_quartz"],
       "locked": false
     },
     {
       "id": "caverns_of_oblivion",
       "name": "Caverns of Oblivion",
       "description": "A dark underground complex where movement near chasms is impossible without magical light. One wrong step means certain death.",
-      "nextLocations": ["frozen_peaks", "druids_star_circle"],
+      "nextLocations": ["ancient_oak", "druids_star_circle"],
       "Items": [],
       "locked": true,
       "unlockItem": "light_crystal"
@@ -147,7 +147,7 @@
       "description": "A creature inhabiting the marshlands. It squints as it tries to see you.",
       "location": "rotting_marshlands",
       "quest": "find_glasses",
-      "dialogue": "I... I can't see properly. My glasses! I lost my glasses somewhere in this cursed swamp. If you find them and bring them to me, I'll give you something valuable - a rare swamp gas.",
+      "dialogue": "I... I can't see properly. My glasses! I lost my glasses somewhere in this cursed swamp.\nIf you find them and bring them to me, I'll give you something valuable - a rare swamp gas.\nUse command 'use glasses'",
       "questCompleteDialogue": "You found them! I can see again! Here, take this swamp gas as promised. It's a ritual artifact - guard it well."
     },
     {
@@ -156,7 +156,7 @@
       "description": "The former mayor, now a skeleton suffering from joint pains.",
       "location": "forsaken_town",
       "quest": "heal_hugo",
-      "dialogue": "Ahhh, my bones ache terribly! Once I was the proud mayor of this town. Now I'm just a pile of bones in constant pain. Bring me a healing elixir, and I'll give you my precious key.",
+      "dialogue": "Ahhh, my bones ache terribly! Once I was the proud mayor of this town.\nNow I'm just a pile of bones in constant pain. Bring me a healing elixir, and I'll give you my precious key.\nUse command 'Use healing_elixir'",
       "questCompleteDialogue": "Ahh! The pain is gone! Thank you, traveler. Here's the rusty key I promised. May it serve you well."
     },
     {
@@ -164,8 +164,8 @@
       "name": "Forest Fairy",
       "description": "Guardian of the crystal who tests travelers with riddles.",
       "location": "sunny_glade",
-      "quest": "solve_riddle",
-      "dialogue": "Welcome, traveler. I am the guardian of the Light Crystal. To prove your wit, answer my riddle: I speak without a mouth and hear without ears. I have no body, but come alive with wind. What am I?",
+      "quest": "fairy_riddle",
+      "dialogue": "Welcome, traveler. I am the guardian of the Light Crystal.\nTo prove your wit, answer my riddle:\n\nI speak without a mouth and hear without ears. I have no body, but come alive with wind. What am I?",
       "questCompleteDialogue": "Correct! An echo. You have proven your intellect. Take the Light Crystal - you'll need it in the darkness below.",
       "riddleAnswer": "echo"
     },
@@ -175,7 +175,7 @@
       "description": "A mineral expert trapped in the caverns.",
       "location": "caverns_of_oblivion",
       "quest": "gerald_riddle",
-      "dialogue": "Ah, another soul braving these caverns! I'm a mineral expert, and I have a Rune Stone you seek. But first, solve my riddle: The more you take, the more you leave behind. What am I?",
+      "dialogue": "Ah, another soul braving these caverns!\nI'm a mineral expert, and I have a Rune Stone you seek.\nBut first, solve my riddle:\n\nThe more you take, the more you leave behind. What am I?",
       "questCompleteDialogue": "Footsteps! Well done. Here's the Rune Stone. Use it wisely.",
       "riddleAnswer": "footsteps"
     },
@@ -185,7 +185,7 @@
       "description": "An intelligent tree that requires proof of magical abilities.",
       "location": "ancient_oak",
       "quest": "prove_magic",
-      "dialogue": "Young wizard... I sense you, but words alone mean nothing. Show me you possess true magical power. Use your wand in my presence, and I shall grant you the Eternal Twig.",
+      "dialogue": "Young wizard... I sense you, but words alone mean nothing.\nShow me you possess true magical power. Use your wand in my presence, and I shall grant you the Eternal Twig.",
       "questCompleteDialogue": "Your magic is genuine. Take this Eternal Twig - a piece of my essence that shall never wither."
     },
     {
@@ -194,26 +194,9 @@
       "description": "A former court wizard who became enslaved after attempting to gain power.",
       "location": "town_hall",
       "quest": "defeat_malrec",
-      "dialogue": "You dare enter my domain? I was once the greatest court wizard, but my quest for power transformed me into... this. Now I serve the curse itself. If you want the Spell Fragment, you must defeat me in combat! (use magic_wand)",
+      "dialogue": "You dare enter my domain? I was once the greatest court wizard, but my quest for power transformed me into...this. \nNow I serve the curse itself. If you want the Spell Fragment, you must defeat me in combat!\nUse command 'use magic_wand'",
       "questCompleteDialogue": "You... you've freed me. The curse's hold is broken. Take the Spell Fragment. Use it to end this nightmare for everyone.",
       "hostile": true
-    },
-    {
-      "id": "mysterious_figure",
-      "name": "Mysterious Figure",
-      "description": "A cloaked figure who seems to know more than they let on.",
-      "location": "whispering_woods",
-      "quest": "",
-      "dialogue": "The woods whisper many things, traveler. Some truth, some lies. Trust your instincts, and you may find what you seek."
-    },
-    {
-      "id": "ice_hermit",
-      "name": "Ice Hermit",
-      "description": "A reclusive figure living among the frozen peaks.",
-      "location": "frozen_peaks",
-      "quest": "gather_quartz",
-      "dialogue": "The cold preserves all things here. I've found a beautiful Frosty Quartz in the ice. Prove yourself worthy by gathering ingredients for a healing elixir, and I'll trade it to you.",
-      "questCompleteDialogue": "Excellent work! This elixir will help many. Here's the Frosty Quartz as promised."
     }
   ],
   "Quests": [
@@ -236,10 +219,10 @@
       "completed": false
     },
     {
-      "id": "solve_riddle",
+      "id": "fairy_riddle",
       "name": "Solve the Fairy's Riddle",
       "character": "forest_fairy",
-      "description": "Answer the Forest Fairy's riddle correctly.\n ",
+      "description": "Answer the Forest Fairy's riddle correctly.",
       "requiredItem": "",
       "reward": "light_crystal",
       "completed": false,
@@ -273,15 +256,6 @@
       "reward": "spell_fragment",
       "completed": false,
       "combat": true
-    },
-    {
-      "id": "gather_quartz",
-      "name": "Gather Ingredients",
-      "character": "ice_hermit",
-      "description": "Help the Ice Hermit create a healing elixir.",
-      "requiredItem": "",
-      "reward": "frosty_quartz",
-      "completed": false
     }
   ],
   "AltarRequirements": [

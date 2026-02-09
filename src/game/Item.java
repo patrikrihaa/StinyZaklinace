@@ -1,5 +1,10 @@
 package game;
-
+/**
+ * Reprezentuje předmět ve hře.
+ * Předměty mohou být sebrány, uloženy v inventáři a použity k plnění questů.
+ *
+ * @author Patrik Říha
+ */
 public class Item {
     private String id;
     private String name;

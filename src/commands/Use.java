@@ -6,36 +6,57 @@ import game.Player;
 import game.Quest;
 import game.Character;
 
+/**
+ * Příkaz pro použití předmětu z inventáře.
+ * Zpracovává použití předmětů v kontextu (boj, magie, oltář).
+ *
+ * @author Patrik Říha
+ */
 public class Use implements Command {
     private Player player;
     private DataLoader world;
 
+    /**
+     * Konstruktor pro příkaz použití předmětu.
+     * @param player reference na hráče (pro přístup k inventáři a stavu hry)
+     * @param world  reference na herní svět (pro ověření požadavků oltáře a questů)
+     */
     public Use(Player player, DataLoader world) {
         this.player = player;
         this.world = world;
     }
 
+    /**
+     * Zpracuje uživatelský požadavek na použití předmětu.
+     * Rozhoduje, zda se předmět používá u oltáře nebo v běžné lokaci
+     * pro vyřešení úkolu.
+     * @param command textový řetězec zadaný hráčem (např. "use magic_wand")
+     * @return zpráva o výsledku použití předmětu nebo vítězný text
+     */
     @Override
     public String execute(String command) {
-        String[] parts = command.split(" ");
+        String[] parts = command.split("\\s+");
 
         if (parts.length < 2) {
             return "You must specify an item to use. Example: use magic_wand";
         }
-
         String itemId = parts[1].trim();
 
         if (!player.getInventory().contains(itemId)) {
             return "You don't have that item in your inventory.";
         }
-
         if (player.getLocation().getId().equals("druids_star_circle")) {
             return handleAltarUse(itemId);
         }
-
         return handleItemUse(itemId);
     }
 
+    /**
+     * Řeší logiku pokládání artefaktů na oltář.
+     * Pokud jsou položeny všechny požadované předměty, nastaví hru jako vyhranou.
+     * @param itemId ID předmětu, který se hráč pokouší položit na oltář
+     * @return text popisující reakci oltáře nebo závěrečný vítězný text
+     */
     private String handleAltarUse(String itemId) {
         if (world.AltarRequirements.contains(itemId)) {
             player.addToAltarItems(itemId);
@@ -61,6 +82,13 @@ public class Use implements Command {
         return "The altar doesn't react to this item. You need the six ritual artifacts.";
     }
 
+    /**
+     * Řeší použití předmětu v běžných lokacích.
+     * Kontroluje přítomnost postav a zda použitý předmět řeší jejich aktivní úkol
+     * (např. souboj hůlkou nebo odevzdání věci).
+     * @param itemId ID předmětu, který chce hráč použít
+     * @return výsledek interakce s prostředím nebo postavou
+     */
     private String handleItemUse(String itemId) {
         String locationId = player.getLocation().getId();
 
@@ -80,7 +108,6 @@ public class Use implements Command {
                     }
                     return "You've already defeated Arcanist Malrec.";
                 }
-
                 if (quest.getRequiredItem() != null && quest.getRequiredItem().equals(itemId)) {
                     if (!quest.isCompleted()) {
                         quest.setCompleted(true);

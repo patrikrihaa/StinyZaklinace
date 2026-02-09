@@ -1,7 +1,18 @@
 package commands;
 
+/**
+ * Příkaz pro zobrazení nápovědy k příkazům.
+ * Ukazuje seznam všech dostupných příkazů a jejich použití.
+ *
+ * @author Patrik Říha
+ */
 public class Help implements Command {
 
+    /**
+     * Zpracuje uživatelský požadavek na zobrazení nápovědy.
+     * @param command textový řetězec zadaný hráčem (např. "help")
+     * @return formátovaný text obsahující seznam a popis všech příkazů
+     */
     @Override
     public String execute(String command) {
         StringBuilder help = new StringBuilder();

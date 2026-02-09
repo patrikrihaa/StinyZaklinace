@@ -3,17 +3,31 @@ package commands;
 import game.Location;
 import game.Player;
 
+/**
+ * Příkaz pro rozhlédnutí se po aktuální lokaci.
+ * Zobrazuje popis lokace, předměty a postavy.
+ *
+ * @author Patrik Říha
+ */
 public class LookAround implements Command {
+    private Player player;
 
-    private Player p;
-
-    public LookAround(Player p) {
-        this.p = p;
+    /**
+     * Konstruktor pro rozhlédnutí v dané lokaci.
+     * @param player reference na hráče (pro zjištění jeho aktuální lokace a jejího obsahu)
+     */
+    public LookAround(Player player) {
+        this.player = player;
     }
 
+    /**
+     * Zpracuje uživatelský požadavek a sestaví textový popis aktuálního okolí.
+     * @param command textový řetězec zadaný hráčem (např. "look" nebo "rozhledni se")
+     * @return text obsahující popis lokace a seznam předmětů
+     */
     @Override
     public String execute(String command) {
-        Location currentLocation = p.getLocation();
+        Location currentLocation = player.getLocation();
         StringBuilder description = new StringBuilder();
 
         description.append("\n").append(currentLocation.getDescription()).append("\n");

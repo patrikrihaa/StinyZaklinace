@@ -1,5 +1,11 @@
 package game;
 
+/**
+ * Reprezentuje postavu (NPC) ve hře.
+ * Postavy mají dialogy, questy a mohou být umístěny v konkrétních lokacích.
+ *
+ * @author Patrik Říha
+ */
 public class Character {
     private String id;
     private String name;
