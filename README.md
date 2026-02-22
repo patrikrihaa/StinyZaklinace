@@ -1,4 +1,4 @@
-# 🌑 Stíny Zaklínače
+# 🧙‍♀️ Stíny Zaklínače
 
 **Stíny Zaklínače** je textová adventura napsaná v Javě, kde se hráč probudí jako mladý čaroděj bez vzpomínek uprostřed prokletých bažin. Celý svět je stižen temnou kletbou, která mění lidi v nestvůry. Vašim úkolem je prozkoumat nebezpečné lokace, komunikovat s pozůstalými bytostmi, splnit jejich questy a získat 6 rituálních artefaktů. Pouze tak můžete zlomit kletbu a najít cestu domů.
 
@@ -168,3 +168,4 @@ Swamp Wanderer says:
 * 💡 Druidův hvězdný kruh se odemkne až po **dokončení všech 6 questů**
 * 💡 Používej `hint` pro nápovědu když nevíš co dál
 * 💡 Krystal světla je **nezbytný** pro temné jeskyně
+
