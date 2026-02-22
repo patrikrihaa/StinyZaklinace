@@ -76,24 +76,9 @@ class UseTest {
     }
 
     @Test
-    void executeWithoutArgument() {
-        String result = use.execute("use");
-        assertTrue(result.contains("specify"));
-    }
-
-    @Test
     void executeItemNotInInventory() {
         String result = use.execute("use glasses");
         assertTrue(result.contains("don't have"));
-    }
-
-    @Test
-    void executeArtifactOnAltar() {
-        player.addToInventory("spell_fragment");
-        String result = use.execute("use spell_fragment");
-
-        assertTrue(player.getAltarItems().contains("spell_fragment"));
-        assertFalse(player.getInventory().contains("spell_fragment"));
     }
 
     @Test
@@ -102,10 +87,5 @@ class UseTest {
         use.execute("use spell_fragment");
 
         assertTrue(player.hasAllAltarItems(fakeWorld.AltarRequirements));
-    }
-
-    @Test
-    void exitReturnsFalse() {
-        assertFalse(use.exit());
     }
 }

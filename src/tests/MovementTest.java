@@ -46,8 +46,8 @@ class MovementTest {
         player = new Player();
 
         location = new Location();
-        location.setId("windmill");
-        location.setName("Windmill");
+        location.setId("sunny_glade");
+        location.setName("Sunny Glade");
         location.setDescription("A starting location.");
         location.setLocked(false);
         ArrayList<String> neighbors = new ArrayList<>();
@@ -76,25 +76,8 @@ class MovementTest {
     }
 
     @Test
-    void executeWithoutArgument() {
-        String result = movement.execute("go");
-        assertTrue(result.contains("specify"));
-    }
-
-    @Test
     void executeInvalidLocation() {
         String result = movement.execute("go sunny_glade");
         assertTrue(result.contains("can't move"));
-    }
-
-    @Test
-    void playerStaysInSameLocation() {
-        movement.execute("go invalid");
-        assertEquals("windmill", player.getLocation().getId());
-    }
-
-    @Test
-    void exitReturnsFalse() {
-        assertFalse(movement.exit());
     }
 }

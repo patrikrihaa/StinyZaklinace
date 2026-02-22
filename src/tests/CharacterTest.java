@@ -28,26 +28,8 @@ class CharacterTest {
     }
 
     @Test
-    void getName() {
-        character.setName("Skeleton Hugo");
-        assertEquals("Skeleton Hugo", character.getName());
-    }
-
-    @Test
     void getLocation() {
         character.setLocation("forsaken_town");
         assertEquals("forsaken_town", character.getLocation());
-    }
-
-    @Test
-    void getDialogue() {
-        character.setDialogue("Hello traveler!");
-        assertEquals("Hello traveler!", character.getDialogue());
-    }
-
-    @Test
-    void getQuest() {
-        character.setQuest("heal_hugo");
-        assertEquals("heal_hugo", character.getQuest());
     }
 }

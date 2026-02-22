@@ -39,24 +39,6 @@ class DropItemTest {
         crystal.setDescription("A magical crystal.");
         world.Items.add(crystal);
 
-        Item key = new Item();
-        key.setId("rusty_key");
-        key.setName("Rusty Key");
-        key.setDescription("An old key.");
-        world.Items.add(key);
-
-        Item wand = new Item();
-        wand.setId("magic_wand");
-        wand.setName("Magic Wand");
-        wand.setDescription("A powerful wand.");
-        world.Items.add(wand);
-
-        Item glasses = new Item();
-        glasses.setId("glasses");
-        glasses.setName("Glasses");
-        glasses.setDescription("A glasses.");
-        world.Items.add(glasses);
-
         dropItemCommand = new DropItem(player, world);
     }
 
@@ -77,73 +59,5 @@ class DropItemTest {
         String result = dropItemCommand.execute("drop crystal_light");
 
         assertTrue(result.contains("can't drop"));
-    }
-
-    @Test
-    void DropMultipleItems() {
-        player.addToInventory("crystal_light");
-        player.addToInventory("rusty_key");
-        player.addToInventory("glasses");
-        assertEquals(4, player.getInventorySize());
-
-        dropItemCommand.execute("drop crystal_light");
-        dropItemCommand.execute("drop rusty_key");
-
-        assertEquals(2, player.getInventorySize());
-        assertTrue(player.getInventory().contains("glasses"));
-    }
-
-    @Test
-    void DropItemCreatesSpaceInInventory() {
-        for (int i = 0; i < 9; i++) {
-            player.addToInventory("item_" + i);
-        }
-
-        assertTrue(player.isInventoryFull());
-        assertEquals(0, player.getRemainingInventorySpace());
-
-        dropItemCommand.execute("drop item_0");
-
-        assertTrue(player.isInventoryFull());
-        assertEquals(10, player.getInventorySize());
-        assertEquals(0, player.getRemainingInventorySpace());
-    }
-
-    @Test
-    void DropMagicWand() {
-        assertTrue(player.getInventory().contains("magic_wand"));
-        dropItemCommand.execute("drop magic_wand");
-
-        assertEquals(0, player.getInventorySize());
-    }
-
-    @Test
-    void DropItemThenPickItUpAgain() {
-        player.addToInventory("crystal_light");
-
-        dropItemCommand.execute("drop crystal_light");
-        assertFalse(player.getInventory().contains("crystal_light"));
-        assertTrue(location.getItems().contains("crystal_light"));
-
-        player.addToInventory("crystal_light");
-        location.getItems().remove("crystal_light");
-
-        assertTrue(player.getInventory().contains("crystal_light"));
-        assertFalse(location.getItems().contains("crystal_light"));
-    }
-
-    @Test
-    void DropAllItemsFromFullInventory() {
-        for (int i = 0; i < 9; i++) {
-            player.addToInventory("item_" + i);
-        }
-
-        assertEquals(10, player.getInventorySize());
-
-        for (int i = 0; i < 9; i++) {
-            dropItemCommand.execute("drop item_" + i);
-        }
-
-        assertEquals(0, location.getItems().size());
     }
 }

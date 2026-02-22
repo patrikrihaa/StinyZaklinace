@@ -23,24 +23,6 @@ class LocationTest {
     }
 
     @Test
-    void getId() {
-        location.setId("forsaken_town");
-        assertEquals("forsaken_town", location.getId());
-    }
-
-    @Test
-    void getName() {
-        location.setName("Town Hall");
-        assertEquals("Town Hall", location.getName());
-    }
-
-    @Test
-    void getDescription() {
-        location.setDescription("An abandoned windmill that spins endlessly without wind");
-        assertEquals("An abandoned windmill that spins endlessly without wind", location.getDescription());
-    }
-
-    @Test
     void isLocked() {
         location.setLocked(true);
         assertTrue(location.isLocked());

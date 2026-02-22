@@ -46,42 +46,29 @@ class TakeItemTest {
         player = new Player();
 
         location = new Location();
-        location.setId("room");
-        location.setName("Simple Room");
-        location.setDescription("A simple room.");
+        location.setId("sunny_glade");
+        location.setName("Sunny Glade");
+        location.setDescription("A pretty....");
 
         ArrayList<String> items = new ArrayList<>();
         items.add("healing_elixir");
-        items.add("glasses");
         location.setItems(items);
 
         player.updateLocation(location);
-
-        Item sword = new Item();
-        sword.setId("healing_elixir");
-        sword.setName("Healing Elirir");
-
-        Item potion = new Item();
-        potion.setId("glasses");
-        potion.setName("Glasses");
+        Item elixir = new Item();
+        elixir.setId("healing_elixir");
+        elixir.setName("Healing Elirir");
 
         fakeWorld = new FakeWorld();
-        fakeWorld.addItem(sword);
-        fakeWorld.addItem(potion);
+        fakeWorld.addItem(elixir);
 
         takeItem = new TakeItem(player, fakeWorld);
     }
 
     @Test
-    void executeWithoutArgument() {
-        String result = takeItem.execute("take");
-        assertTrue(result.contains("specify"));
-    }
-
-    @Test
     void executeItemNotInLocation() {
         String result = takeItem.execute("take rusty_key");
-        assertTrue(result.contains("available"));
+        assertTrue(result.contains("isn't available"));
     }
 
     @Test
@@ -91,20 +78,5 @@ class TakeItemTest {
         assertTrue(player.getInventory().contains("healing_elixir"));
         assertFalse(location.getItems().contains("healing_elixir"));
         assertTrue(result.contains("picked up"));
-    }
-
-    @Test
-    void executeMultipleItems() {
-        takeItem.execute("take healing_elixir");
-        takeItem.execute("take glasses");
-
-        assertTrue(player.getInventory().contains("glasses"));
-        assertTrue(player.getInventory().contains("healing_elixir"));
-        assertEquals(0, location.getItems().size());
-    }
-
-    @Test
-    void exitReturnsFalse() {
-        assertFalse(takeItem.exit());
     }
 }

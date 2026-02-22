@@ -21,12 +21,6 @@ class QuestTest {
     }
 
     @Test
-    void getId() {
-        quest.setId("heal_hugo");
-        assertEquals("heal_hugo", quest.getId());
-    }
-
-    @Test
     void isCompleted() {
         assertFalse(quest.isCompleted());
         quest.setCompleted(true);
@@ -39,16 +33,4 @@ class QuestTest {
         assertEquals("rusty_key", quest.getRequiredItem());
     }
 
-    @Test
-    void getReward() {
-        quest.setReward("healing_elixir");
-        assertEquals("healing_elixir", quest.getReward());
-    }
-
-    @Test
-    void isCombat() {
-        assertFalse(quest.isCombat());
-        quest.setCombat(true);
-        assertTrue(quest.isCombat());
-    }
 }

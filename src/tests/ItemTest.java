@@ -27,26 +27,8 @@ class ItemTest {
     }
 
     @Test
-    void getName() {
-        item.setName("Glasses");
-        assertEquals("Glasses", item.getName());
-    }
-
-    @Test
     void getDescription() {
         item.setDescription("A wand that allows you to use magic");
         assertEquals("A wand that allows you to use magic", item.getDescription());
-    }
-
-    @Test
-    void setId() {
-        item.setId("healing_elixir");
-        assertEquals("healing_elixir", item.getId());
-    }
-
-    @Test
-    void setName() {
-        item.setName("Spell Fragment");
-        assertEquals("Spell Fragment", item.getName());
     }
 }

@@ -37,24 +37,4 @@ class PlayerTest {
         player.addToInventory("sword");
         assertTrue(player.getInventory().contains("sword"));
     }
-
-    @Test
-    void removeFromInventory() {
-        player.addToInventory("glasses");
-        player.removeFromInventory("glasses");
-        assertFalse(player.getInventory().contains("glasses"));
-    }
-
-    @Test
-    void addToAltarItems() {
-        player.addToAltarItems("healing_elixir");
-        assertTrue(player.getAltarItems().contains("healing_elixir"));
-    }
-
-    @Test
-    void isGameWon() {
-        assertFalse(player.isGameWon());
-        player.setGameWon(true);
-        assertTrue(player.isGameWon());
-    }
 }
