@@ -1,8 +1,8 @@
-# 🧙‍♀️ Stíny Zaklínače
+# Stíny Zaklínače
 
 **Stíny Zaklínače** je textová adventura napsaná v Javě, kde se hráč probudí jako mladý čaroděj bez vzpomínek uprostřed prokletých bažin. Celý svět je stižen temnou kletbou, která mění lidi v nestvůry. Vašim úkolem je prozkoumat nebezpečné lokace, komunikovat s pozůstalými bytostmi, splnit jejich questy a získat 6 rituálních artefaktů. Pouze tak můžete zlomit kletbu a najít cestu domů.
 
-### 🎮 Herní mechaniky
+### Herní mechaniky
 
 * **Prozkoumávání** - Pohybujte se mezi 10 lokacemi pomocí příkazů
 * **Inventář** - Sbírejte předměty (max 10) a strategicky je používejte
@@ -10,7 +10,7 @@
 * **Souboje** - Poražte nepřátelského Arkanistu pomocí magie
 * **Hádanky** - Odpovídejte správně na záludné otázky
 
-### 🏆 Cíl hry
+### Cíl hry
 
 Získej **6 rituálních artefaktů**:
 1. Bažinný plyn (`swamp_gas`)
@@ -22,7 +22,7 @@ Získej **6 rituálních artefaktů**:
 
 Poté je umístěte na oltář v **Druidově hvězdném oltáři** a zlomte kletbu!
 
-### 🚶První kroky ve hře
+### První kroky ve hře
 
 ```
 > examine
@@ -51,101 +51,101 @@ Swamp Wanderer says:
 "I... I can't see properly. My glasses! I lost my glasses...
 ```
 
-**💡 Tip:** Použijte příkaz `help` pro zobrazení seznam všech dostupných příkazů!
+**Tip:** Použijte příkaz `help` pro zobrazení seznam všech dostupných příkazů!
 
 ---
 
-## 🗺️ Mapa světa
+## Mapa světa
 
 ```
                     ┌─────────────────────┐
-                    │   Hnijící tůně 💀   │
+                    │   Hnijící tůně      │
                     │(Rooting Marshlands) │
-                    │      ⭐ START       │
+                    │         START       │
                     └──────────┬──────────┘
                                │
                     ┌──────────┴──────────┐
-        ┌───────────┤  Opuštěné město 🏚️  ├──────────┐
+        ┌───────────┤  Opuštěné město     ├──────────┐
         │           │  (Forsaken Town)    │          │
         │           └─────────┬───────────┘          │
         │                     │                      │
         │           ┌─────────┴────────────┐         │
-        │           │     Radniční věz🗼   │         │
+        │           │     Radniční věz     │         │
         │           │      (Town Hall)     │         │
         │           └──────────────────────┘         │
         │                                            │
 ┌───────┴────────┐                          ┌────────┴────────┐
-│ Mýtina 🌸      │                          │ Větrný mlýn 🌾 │
+│ Mýtina         │                          │ Větrný mlýn     │
 │ (Sunny Glade)  │                          │ (Windmill)      │
 └───────┬────────┘                          └─────────────────┘         
         │                                             
 ┌───────┴────────┐                          ┌───────┴──────────┐                         
-│Štíty mrazivého │                          │ Šeptající les 🌲 │                        
-│    dechu ❄️    │                          │(Whispering Woods)│
+│Štíty mrazivého │                          │ Šeptající les    │                        
+│    dechu       │                          │(Whispering Woods)│
 │  (Frost Peaks) │                          └───────┬──────────┘                       
 └───────┬────────┘                                  │                         
         │                                           │ 
         │           ┌────────────────────┐          │ 
-        └───────────┤   Prastarý dub 🌳  ├──────────┘
+        └───────────┤   Prastarý dub     ├──────────┘
                     │    (Ancient Oak)   │
                     └─────────┬──────────┘
                               │
                     ┌─────────┴────────────┐
-                    │ Jeskyně zapomenutí🕳️ │
+                    │ Jeskyně zapomenutí   │
                     │(Caverns of Oblivion) │
                     └─────────┬────────────┘
                               │
                     ┌─────────┴──────────────┐
-                    │Druidův hvězdný oltář ⭐│
+                    │Druidův hvězdný oltář   │
                     │(Caverns of Oblivion)   │
                     └────────────────────────┘
 ```
 
 ---
 
-## 🧙‍♀️ Seznam Postav
+## Seznam Postav
 
 | Jméno (CZ) | Jméno (EN) | ID |
 |---------|--------|--------|
-| 🧟 Bažinný bludišťák | Swamp Wanderer | swamp_wanderer |
-| 💀 Kostlivec Hugo | Skeleton Hugo | skeleton_hugo |
-| 🤺 Arkanista Malrec | Arcanist Malrec | arcanist_malrec |
-| 🧚 Lesní víla | Forest Fairy | forest_fairy |
-| 🗻 Průzkumník Gerald | Explorer Gerald | explorer_gerald  |
-| 🌳 Dub moudrosti | Oak of Wisdom | oak_of_wisdom |
+| Bažinný bludišťák | Swamp Wanderer | swamp_wanderer |
+| Kostlivec Hugo | Skeleton Hugo | skeleton_hugo |
+| Arkanista Malrec | Arcanist Malrec | arcanist_malrec |
+| Lesní víla | Forest Fairy | forest_fairy |
+| Průzkumník Gerald | Explorer Gerald | explorer_gerald  |
+| Dub moudrosti | Oak of Wisdom | oak_of_wisdom |
 
-## 🪄 Seznam Předmětů 
-
-| Jméno (CZ) | Jméno (EN) | ID |
-|---------|--------|--------|
-| 👓 Brýle | Glasses | glasses |
-| 🪄 Magická hůl | Magic Wand | magic_wand |
-| 🔑 Zrezivělý klíč | Rusty Key | rusty_key |
-| 💡 Krystal světla | Light Crystal | light_crystal |
-| 🌫️ Bažinný plyn | Swamp Gas | swamp_gas  |
-| 🧚‍♂️ Magická mouka | Magic Flour | magic_flour |
-| 🧊 Mrazivý kyz | Forsty Quartz | frosty_quartz |
-| 🗻 Runový kámen | Rune Stone | rune_stone |
-| 🧙‍♀️ Fragment kouzla | Spell Fragment | spell_fragment |
-| 🧪 Elixír uzdravení | Healing Elixir | healing_elixir  |
-| 🪾 Věčná větvička | Eternal Twig | eternal_twig |
-
-## 🌋Seznam Lokací
+## Seznam Předmětů 
 
 | Jméno (CZ) | Jméno (EN) | ID |
 |---------|--------|--------|
-| 💀 Hnijící tůně | Rotting Marshlands | rotting_marshlands |
-| 🏚️ Opuštěné město | Forsaken Town | forsaken_town |
-| 🗼 Radniční věž | Town Hall Tower | town_hall |
-| 🌸 Mýtina | Sunny Glade | sunny_glade |
-| ❄️ Štíty mrazivého dechu | Frozen Peaks | frozen_peaks  |
-| 🌾 Vetrný mlýn | Windmill | windmill |
-| 🌲 Šeptající les | Whispering Woods | whispering_woods |
-| 🌳 Prastarý dub moudrosti | Ancient Oak of Wisdom | ancient_oak |
-| 🕳️ Jeskyně zapomenutí | Caverns of Oblivion | caverns_of_oblivion |
-| ⭐ Druidův hvězdný oltář | Druid's Star Circle | druids_star_circle  |
+| Brýle | Glasses | glasses |
+| Magická hůl | Magic Wand | magic_wand |
+| Zrezivělý klíč | Rusty Key | rusty_key |
+| Krystal světla | Light Crystal | light_crystal |
+| Bažinný plyn | Swamp Gas | swamp_gas  |
+| Magická mouka | Magic Flour | magic_flour |
+| Mrazivý kyz | Forsty Quartz | frosty_quartz |
+| Runový kámen | Rune Stone | rune_stone |
+| Fragment kouzla | Spell Fragment | spell_fragment |
+| Elixír uzdravení | Healing Elixir | healing_elixir  |
+| Věčná větvička | Eternal Twig | eternal_twig |
 
-## 📋 Seznam příkazů
+## Seznam Lokací
+
+| Jméno (CZ) | Jméno (EN) | ID |
+|---------|--------|--------|
+| Hnijící tůně | Rotting Marshlands | rotting_marshlands |
+| Opuštěné město | Forsaken Town | forsaken_town |
+| Radniční věž | Town Hall Tower | town_hall |
+| Mýtina | Sunny Glade | sunny_glade |
+| Štíty mrazivého dechu | Frozen Peaks | frozen_peaks  |
+| Vetrný mlýn | Windmill | windmill |
+| Šeptající les | Whispering Woods | whispering_woods |
+| Prastarý dub moudrosti | Ancient Oak of Wisdom | ancient_oak |
+| Jeskyně zapomenutí | Caverns of Oblivion | caverns_of_oblivion |
+| Druidův hvězdný oltář | Druid's Star Circle | druids_star_circle  |
+
+## Seznam příkazů
 
 | Příkaz | Popis | Příklad |
 |--------|-------|---------|
@@ -163,10 +163,11 @@ Swamp Wanderer says:
 
 ---
 ## Klíčové tipy
-* 💡 Inventář má limit **10 předmětů** - zahazuj nepotřebné věci
-* 💡 Některé lokace jsou **zamčené** - potřebuješ správný klíč
-* 💡 Druidův hvězdný kruh se odemkne až po **dokončení všech 6 questů**
-* 💡 Používej `hint` pro nápovědu když nevíš co dál
+* Inventář má limit **10 předmětů** - zahazuj nepotřebné věci
+* Některé lokace jsou **zamčené** - potřebuješ správný klíč
+* Druidův hvězdný kruh se odemkne až po **dokončení všech 6 questů**
+* Používej `hint` pro nápovědu když nevíš co dál
 * 💡 Krystal světla je **nezbytný** pro temné jeskyně
+
 
 
