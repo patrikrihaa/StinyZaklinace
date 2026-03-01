@@ -34,12 +34,12 @@ public class DropItem implements Command {
     @Override
     public String execute(String command) {
         String[] parts = command.split("\\s+");
-        String itemId = parts[1];
         Location currentLocation = player.getLocation();
 
         if (parts.length < 2) {
             return "You have to specify an item id";
         }
+        String itemId = parts[1];
 
         if (player.getInventory() == null || !player.getInventory().contains(itemId)) {
             return "You can't drop this item: " + itemId + ". This item isn't currently in your inventory.";

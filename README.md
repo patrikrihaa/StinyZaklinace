@@ -14,9 +14,9 @@
 
 Získej **6 rituálních artefaktů**:
 1. Bažinný plyn (`swamp_gas`)
-2. Magická mouka (`magic_flour`)  
+2. Magická mouka (`magic_flour`)
 3. Věčná větvička (`eternal_twig`)
-4. Mrazivý kámen (`frosty_stone`)
+4. Mrazivý kyz (`frosty_quartz`)
 5. Runový kámen (`rune_stone`)
 6. Fragment kouzla (`spell_fragment`)
 
@@ -61,7 +61,7 @@ Swamp Wanderer says:
                     ┌─────────────────────┐
                     │   Hnijící tůně      │
                     │(Rooting Marshlands) │
-                    │         START       │
+                    │        START        │
                     └──────────┬──────────┘
                                │
                     ┌──────────┴──────────┐
@@ -75,12 +75,12 @@ Swamp Wanderer says:
         │           └──────────────────────┘         │
         │                                            │
 ┌───────┴────────┐                          ┌────────┴────────┐
-│ Mýtina         │                          │ Větrný mlýn     │
-│ (Sunny Glade)  │                          │ (Windmill)      │
-└───────┬────────┘                          └─────────────────┘         
-        │                                             
+│    Mýtina      │                          │   Větrný mlýn   │
+│ (Sunny Glade)  │                          │   (Windmill)    │
+└───────┬────────┘                          └───────┬─────────┘         
+        │                                           │  
 ┌───────┴────────┐                          ┌───────┴──────────┐                         
-│Štíty mrazivého │                          │ Šeptající les    │                        
+│Štíty mrazivého │                          │  Šeptající les   │                        
 │    dechu       │                          │(Whispering Woods)│
 │  (Frost Peaks) │                          └───────┬──────────┘                       
 └───────┬────────┘                                  │                         
@@ -114,7 +114,7 @@ Swamp Wanderer says:
 | Průzkumník Gerald | Explorer Gerald | explorer_gerald  |
 | Dub moudrosti | Oak of Wisdom | oak_of_wisdom |
 
-## Seznam Předmětů 
+## Seznam Předmětů
 
 | Jméno (CZ) | Jméno (EN) | ID |
 |---------|--------|--------|
@@ -162,12 +162,48 @@ Swamp Wanderer says:
 | `quit` | Ukončit hru | `quit` |
 
 ---
+
+## Jak spustit hru
+
+### Terminál (příkazová řádka)
+
+**Spuštění přes JAR** (nejjednodušší, nevyžaduje zdrojový kód):
+
+1. Stáhni repozitář z GitHubu – **Code → Download ZIP** a rozbal, nebo použij `git clone`
+2. Otevři terminál ve složce projektu (kde se nachází `StinyZaklinace.jar`)
+3. Spusť příkaz:
+```bash
+java -jar StinyZaklinace.jar
+```
+> Vyžaduje nainstalovanou **Javu 21+**. Ověření verze: `java -version`
+
+---
+
+### IntelliJ IDEA
+
+1. Stáhni repozitář z GitHubu – **Code → Download ZIP** a rozbal, nebo použij `git clone`
+2. Otevři IDEA a zvol **File → Open**, vyber staženou složku projektu `StinyZaklinace`
+3. IDEA automaticky rozpozná projekt (soubor `StinyZaklinace.iml`)
+4. Přidej závislost Gson:
+   - **File → Project Structure → Libraries → + → Java**
+   - Vyber soubor `lib/gson-2.10.1.jar`
+5. Nastav `resources/` jako **Resources Root**:
+   - Klikni pravým tlačítkem na složku `resources` → **Mark Directory as → Resources Root**
+6. Otevři soubor `src/Main.java`
+7. Klikni na zelený trojúhelník ▶ vlevo od metody `main` a zvol **Run 'Main.main()'**
+
+> **Poznámka:** Hra je textová – veškerý vstup i výstup probíhá v panelu **Run** dole v IDEA.
+
+---
+
 ## Klíčové tipy
 * Inventář má limit **10 předmětů** - zahazuj nepotřebné věci
 * Některé lokace jsou **zamčené** - potřebuješ správný klíč
 * Druidův hvězdný kruh se odemkne až po **dokončení všech 6 questů**
 * Používej `hint` pro nápovědu když nevíš co dál
-* 💡 Krystal světla je **nezbytný** pro temné jeskyně
+* Krystal světla je **nezbytný** pro temné jeskyně
+
+
 
 
 
