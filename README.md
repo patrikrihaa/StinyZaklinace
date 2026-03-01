@@ -165,13 +165,13 @@ Swamp Wanderer says:
 
 ## Jak spustit hru
 
-### Terminál (příkazová řádka)
+### Terminál (příkazový řádek)
 
 **Spuštění přes JAR** (nejjednodušší, nevyžaduje zdrojový kód):
 
-1. Stáhni repozitář z GitHubu – **Code → Download ZIP** a rozbal, nebo použij `git clone`
-2. Otevři terminál ve složce projektu (kde se nachází `StinyZaklinace.jar`)
-3. Spusť příkaz:
+1. Stáhněte repozitář z GitHubu – **Code → Download ZIP** a rozbalte, nebo použijte `git clone`
+2. Otevřěte terminál ve složce projektu (kde se nachází `StinyZaklinace.jar`)
+3. Použijte příkaz:
 ```bash
 java -jar StinyZaklinace.jar
 ```
@@ -181,27 +181,23 @@ java -jar StinyZaklinace.jar
 
 ### IntelliJ IDEA
 
-1. Stáhni repozitář z GitHubu – **Code → Download ZIP** a rozbal, nebo použij `git clone`
-2. Otevři IDEA a zvol **File → Open**, vyber staženou složku projektu `StinyZaklinace`
+1. Stáhněte repozitář z GitHubu – **Code → Download ZIP** a rozbalte, nebo použijte `git clone`
+2. Otevřete IDEA a zvolte **File → Open**, vyberte staženou složku projektu `StinyZaklinace`
 3. IDEA automaticky rozpozná projekt (soubor `StinyZaklinace.iml`)
-4. Přidej závislost Gson:
-   - **File → Project Structure → Libraries → + → Java**
-   - Vyber soubor `lib/gson-2.10.1.jar`
-5. Nastav `resources/` jako **Resources Root**:
-   - Klikni pravým tlačítkem na složku `resources` → **Mark Directory as → Resources Root**
-6. Otevři soubor `src/Main.java`
-7. Klikni na zelený trojúhelník ▶ vlevo od metody `main` a zvol **Run 'Main.main()'**
+4. Otevřte soubor `src/Main.java`
+5. Klikněte na zelený trojúhelník ▶ vlevo od metody `main` a zvol **Run 'Main.main()'**
 
 > **Poznámka:** Hra je textová – veškerý vstup i výstup probíhá v panelu **Run** dole v IDEA.
 
 ---
 
 ## Klíčové tipy
-* Inventář má limit **10 předmětů** - zahazuj nepotřebné věci
-* Některé lokace jsou **zamčené** - potřebuješ správný klíč
+* Inventář má limit **10 předmětů** - zahazujte nepotřebné věci
+* Některé lokace jsou **zamčené** - potřebujete správný klíč
 * Druidův hvězdný kruh se odemkne až po **dokončení všech 6 questů**
-* Používej `hint` pro nápovědu když nevíš co dál
+* Používejte `hint` pro nápovědu když nevíte co dál
 * Krystal světla je **nezbytný** pro temné jeskyně
+
 
 
 
