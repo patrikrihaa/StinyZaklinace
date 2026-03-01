@@ -16,7 +16,7 @@ Získej **6 rituálních artefaktů**:
 1. Bažinný plyn (`swamp_gas`)
 2. Magická mouka (`magic_flour`)  
 3. Věčná větvička (`eternal_twig`)
-4. Mrazivý kámen (`frosty_stone`)
+4. Mrazivý kyz (`frosty_quartz`)
 5. Runový kámen (`rune_stone`)
 6. Fragment kouzla (`spell_fragment`)
 
@@ -168,6 +168,7 @@ Swamp Wanderer says:
 * Druidův hvězdný kruh se odemkne až po **dokončení všech 6 questů**
 * Používej `hint` pro nápovědu když nevíš co dál
 * 💡 Krystal světla je **nezbytný** pro temné jeskyně
+
 
 
 
